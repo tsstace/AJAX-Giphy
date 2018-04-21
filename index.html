@@ -2,53 +2,44 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Stop: It's Giphy time</title>
+  <meta charset="utf-8">
+  <title>The Simpsons Giphys</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 </head>
 
 <body>
-  <img src="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" data-still="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" data-animate="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200.gif" data-state="still" class="gif">
-  <img src="https://media2.giphy.com/media/8rFQp4kHXJ0gU/200_s.gif" data-still="https://media2.giphy.com/media/8rFQp4kHXJ0gU/200_s.gif" data-animate="https://media2.giphy.com/media/8rFQp4kHXJ0gU/200.gif" data-state="still" class="gif">
-  <img src="https://media3.giphy.com/media/W6LbnBigDe4ZG/200_s.gif" data-still="https://media3.giphy.com/media/W6LbnBigDe4ZG/200_s.gif" data-animate="https://media3.giphy.com/media/W6LbnBigDe4ZG/200.gif" data-state="still" class="gif">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript">
-    $(".gif").on("click", function() {
-      
 
-      // make a variable named state and then store the image's data-state into it.
-      // Use the .attr() method for this.
+  <div class="container">
+    <div class="row text-center guide">
+      <h4>Click on a Simpsons character button and ten popular gifs will be displayed. <br>Click the gifs to play and pause.</h4>
+    </div>
+    <div class="row text-center topic-row" id="topics"></div>
+    <div class="row text-center category-row">
+      <input type="" name="" id="category">
+      <button class="btn btn-secondary" id="addTopic">Add A Character</button>
+    </div>
+  </div>
 
-      var $img = $(this);
-      var state = $img.attr('data-state');
+  <div class="container">
+      <div id="photo"></div>
+    </div>
+  </div>
 
-      // =============================================
+  <script src="assets/javascript/giphy.js"></script>
 
-      // Check if the variable state is equal to 'still',
-      // then update the src attribute of this image to it's data-animate value,
-      // and update the data-state attribute to 'animate'.
-
-      // If state is equal to 'animate', then update the src attribute of this
-      // image to it's data-still value and update the data-state attribute to 'still'
-      // =======================================
-
-      if ( state == "still" ) {
-        var animated_gif_url = $img.attr('data-animate');
-        // $img.attr('src', animated_gif_url);
-        // $img.attr('data-state', "animate");
-        $img.attr({ 'src': animated_gif_url, 'data-state': 'animate' });
-      } else {
-        var still_gif_url = $img.attr('data-still');
-        // $img.attr('src', still_gif_url);
-        // $img.attr('data-state', "still");
-        $img.attr({ 'src': still_gif_url, 'data-state': 'still' });
-      }
-
-      // ==============================================
-
-      // open the file in the browser and click on the images.
-      // Then click again to pause.
-    });
-  </script>
 </body>
+<footer class="page footer font-small blue pt-4 mt-4">
+  <div class="footer-copyright py-3 text-center">
+    Images courtesy of the Giphy api:
+    <a href="http://www.giphy.com/" target="_blank">
+      <img src="assets/images/powered_by_giphy.gif" alt="Powered by Giphy" class="img-responsive" />
+    </a>
+
+  </div>
+</footer>
 
 </html>
