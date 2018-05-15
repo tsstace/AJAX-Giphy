@@ -35,7 +35,7 @@ $(document).on('click', '.topic-buttons', function (event) {
     event.preventDefault();
 
     var type = this.innerText;
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + window.encodeURI(type) + "&limit=10&api_key=5Us7ju1l97BnxwDanvMIv5H6qkmBRz65";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + window.encodeURI(type) + "&limit=10&api_key=5Us7ju1l97BnxwDanvMIv5H6qkmBRz65";
 
     $.ajax({
         url: queryURL,
